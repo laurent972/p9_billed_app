@@ -149,7 +149,10 @@ export default class {
       this.counter ++
     }
 
+
+
     bills.forEach(bill => {
+      //Correction sur liste retour
       $(`#status-bills-container${this.index} #open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
 
@@ -164,7 +167,11 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
+        .sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        })
         .map(doc => ({
+          
           id: doc.id,
           ...doc,
           date: doc.date,

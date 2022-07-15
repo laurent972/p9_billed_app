@@ -19,6 +19,7 @@ export default class Login {
     e.preventDefault()
     const user = {
       type: "Employee",
+    
       email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value,
       password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
       status: "connected"
@@ -41,6 +42,7 @@ export default class Login {
     e.preventDefault()
     const user = {
       type: "Admin",
+        // adding employee email instead of admin
       email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value,
       password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
       status: "connected"
